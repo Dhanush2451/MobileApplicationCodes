@@ -1,0 +1,345 @@
+Code:
+activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:id="@+id/main"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".MainActivity">
+ <LinearLayout
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:layout_marginTop="40dp"
+ android:orientation="vertical"
+ app:layout_constraintTop_toTopOf="parent">
+ <TextView
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:text="Scientific Calculator"
+ android:textAlignment="center"
+ android:textStyle="bold"
+ android:textColor="#FF008C"
+ android:textSize="40sp" />
+ </LinearLayout>
+ <TableLayout
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:layout_marginStart="50dp"
+ android:layout_marginTop="100dp"
+ android:layout_marginEnd="50dp"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent">
+ <TableRow
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+ <TextView
+ android:id="@+id/textView"
+ style="@style/Widget.AppCompat.TextView"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="Number1"
+ android:textSize="24sp"/>
+ <EditText
+ android:id="@+id/e1"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:ems="10"
+ android:inputType="numberDecimal"
+ android:text="" />
+ </TableRow>
+ <TableRow
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+ <TextView
+ android:id="@+id/textView2"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="Number2"
+ android:textSize="24sp" />
+ <EditText
+ android:id="@+id/e2"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:ems="10"
+ android:inputType="numberDecimal"
+ android:text="" />
+ </TableRow>
+ <TableRow
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+ <TextView
+ android:id="@+id/textView3"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="Result"
+ android:textSize="24sp" />
+ <EditText
+ android:id="@+id/e3"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:ems="10"
+ android:inputType="numberDecimal"
+ android:text="" />
+ </TableRow>
+ </TableLayout>
+ <TableLayout
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:layout_marginStart="50dp"
+ android:layout_marginTop="275dp"
+ android:layout_marginEnd="20dp"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent">
+ <TableRow
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+ <Button
+ android:id="@+id/add"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="+"
+ android:textSize="40sp"
+ android:onClick="doSum"/>
+ <Button
+ android:id="@+id/sub"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="-"
+ android:onClick="doSub"
+ android:textSize="40sp" />
+ <Button
+ android:id="@+id/mul"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="*"
+ android:onClick="doMul"
+ android:textSize="40sp" />
+ </TableRow>
+ <TableRow
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+ <Button
+ android:id="@+id/div"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="/"
+ android:onClick="doDiv"
+ android:textSize="40sp" />
+ <Button
+ android:id="@+id/mod"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="%"
+ android:onClick="doMod"
+ android:textSize="40sp" />
+ <Button
+ android:id="@+id/pow"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="^^"
+ android:onClick="doPow"
+ android:textSize="40sp" />
+ </TableRow>
+ <TableRow
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+ <Button
+ android:id="@+id/sq"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="SQRT"
+ android:onClick="doSqrt"
+ android:textSize="30sp" />
+ <Button
+ android:id="@+id/exp"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="EXP"
+ android:onClick="doExp"
+ android:textSize="30sp" />
+ <Button
+ android:id="@+id/log"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="LOG"
+ android:onClick="doLog"
+ android:textSize="30sp" />
+ </TableRow>
+ <TableRow
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+ <Button
+ android:id="@+id/sin"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="SIN"
+ android:onClick="doSin"
+ android:textSize="30sp" />
+ <Button
+ android:id="@+id/cos"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="COS"
+ android:onClick="doCos"
+ android:textSize="30sp" />
+ <Button
+ android:id="@+id/tan"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="TAN"
+ android:onClick="doTan"
+ android:textSize="30sp" />
+ </TableRow>
+ </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+MainActivity.java
+package com.example.calculator;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+public class MainActivity extends AppCompatActivity {
+ public EditText e1,e2,e3;
+ int num1, num2;
+ public boolean getNumbers() {
+ e1 = (EditText) findViewById(R.id.e1);
+ e2 = (EditText) findViewById(R.id.e2);
+ e3 = (EditText)findViewById(R.id.e3);
+ String s1 = e1.getText().toString();
+ String s2 = e2.getText().toString();
+ if(s1.equals("") || s2.equals(""))
+ {
+ String result = "Please enter required values";
+ e3.setText(result);
+ return false;
+ }
+ else
+ {
+ num1 = Integer.parseInt(s1);
+ num2 = Integer.parseInt(s2);
+ return true;
+ }
+ }
+ public boolean getNumber() {
+ e1 = (EditText) findViewById(R.id.e1);
+ e2 = (EditText) findViewById(R.id.e2);
+ e3 = (EditText)findViewById(R.id.e3);
+ String s1 = e1.getText().toString();
+ String s2 = e2.getText().toString();
+ if(s1.equals(""))
+ {
+ String result = "Please enter required value in 
+Number1";
+ e3.setText(result);
+ return false;
+ }
+ else if(!s1.equals("") && !s2.equals(""))
+ {
+ String result = "Enter value Only in Number1";
+ e3.setText(result);
+ return false;
+ }
+ else
+ {
+ num1 = Integer.parseInt(s1);
+ // num2 = Integer.parseInt(s2);
+ return true;
+ }
+ }
+ public void doSum(View v) {
+ if (getNumbers()) {
+ int sum = num1 + num2;
+ e3.setText(Integer.toString(sum));
+ }
+ }
+ public void doSub(View v) {
+ if (getNumbers()) {
+ int sum = num1 - num2;
+ e3.setText(Integer.toString(sum));
+ }
+ }
+ public void doMul(View v) {
+ if (getNumbers()) {
+ int sum = num1 * num2;
+ e3.setText(Integer.toString(sum));
+ }
+ }
+ public void doDiv(View v) {
+ if (getNumbers()) {
+ double sum = num1 / (num2 * 1.0);
+ e3.setText(Double.toString(sum));
+ }
+ }
+ public void doMod(View v) {
+ if (getNumbers()) {
+ double sum = num1 % num2;
+ e3.setText(Double.toString(sum));
+ }
+ }
+ public void doPow(View v) {
+ if (getNumbers()) {
+ double sum = Math.pow(num1, num2);
+ e3.setText(Double.toString(sum));
+ }
+ }
+ public void doSqrt(View v) {
+ if (getNumber()) {
+ double sum = Math.sqrt(num1);
+ e3.setText(Double.toString(sum));
+ }
+ }
+ public void doExp(View v) {
+ if (getNumber()) {
+ double sum = Math.exp(num1);
+ e3.setText(Double.toString(sum));
+ }
+ }
+ public void doLog(View v) {
+ if (getNumber()) {
+ double sum = Math.log(num1);
+ e3.setText(Double.toString(sum));
+ }
+ }
+ public void doSin(View v) {
+ if (getNumber()) {
+ double sum = Math.sin(num1);
+ e3.setText(Double.toString(sum));
+ }
+ }
+ public void doCos(View v) {
+ if (getNumber()) {
+ double sum = Math.cos(num1);
+ e3.setText(Double.toString(sum));
+ }
+ }
+ public void doTan(View v) {
+ if (getNumber()) {
+ double sum = Math.tan(num1);
+ e3.setText(Double.toString(sum));
+ }
+ }
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ EdgeToEdge.enable(this);
+ setContentView(R.layout.activity_main);
+ 
+ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main
+), (v, insets) -> {
+ Insets systemBars = 
+insets.getInsets(WindowInsetsCompat.Type.systemBars());
+ v.setPadding(systemBars.left, systemBars.top, 
+systemBars.right, systemBars.bottom);
+ return insets;
+ });
+ }
+}
